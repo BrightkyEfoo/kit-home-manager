@@ -5,9 +5,16 @@ import RaspberryModel from './models/raspberry.js';
 import { raspberryFIll } from './fillers/RaspberryFiller.js';
 import StatsModel from './models/stats.js';
 
-const sequelize = new Sequelize('gilres', 'root', '1', {
-  host: 'localhost',
-  port: 3306,
+// const sequelize = new Sequelize('gilres', 'root', '1', {
+//   host: 'localhost',
+//   port: 3306,
+//   dialect: 'mysql',
+//   logging: false,
+// });
+
+const sequelize = new Sequelize('kithomemanager', 'root', '12345678', {
+  host: 'mysql-138521-0.cloudclusters.net',
+  port: 14126,
   dialect: 'mysql',
   logging: false,
 });

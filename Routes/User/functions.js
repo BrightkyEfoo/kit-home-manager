@@ -127,7 +127,7 @@ export const printStatsFile = (req, res) => {
       pdfDoc.end();
       return res.json({
         msg: 'success',
-        url: 'http://localhost:9000/stats_pdf/' + name,
+        url: 'https://home-manager-kit.onrender.com/stats_pdf/' + name,
       });
     })
     .catch(err => {
