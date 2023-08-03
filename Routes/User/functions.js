@@ -134,3 +134,19 @@ export const printStatsFile = (req, res) => {
       return res.status(500).json({ msg: 'something went wrong', err });
     });
 };
+
+
+export const changeNumber = (req,res)=>{
+  const {userId , number} = req.body
+  if(!userId || !number){
+    return res.status(404).json({msg : 'user id should be provided'})
+  }
+
+  User.findByPk(userId,{include : Raspberry}).then(user => {
+    user.update({number}).then(newUser => {
+      return res.json({msg : 'success' , user : newUser})
+    })
+  }).catch(err => {
+    return res.status(500).json({msg:'something went wrong', err})
+  })
+}
