@@ -16,7 +16,7 @@ const months = [
 ];
 export const pushStat = (req, res) => {
   const { UserId, password, index, price, month } = req.body;
-  if (!UserId || !password || !month) {
+  if (!UserId || !password) {
     return res.status(407).json({ msg: 'all fields are required' });
   }
   User.findByPk(UserId, { include: Raspberry })
